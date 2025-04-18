@@ -1,0 +1,17 @@
+@use '../palette/palette.module' as palette;
+
+.source-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__language {
+    display: inline-block;
+    text-transform: capitalize;
+  }
+
+  &__favicon {
+    width: 16px;
+    height: 16px;
+  }
+}
