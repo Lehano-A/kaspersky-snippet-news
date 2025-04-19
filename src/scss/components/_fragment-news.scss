@@ -1,0 +1,11 @@
+@use '../palette/palette.module' as palette;
+
+.fragment-news {
+  color: palette.$primary-main-text;
+
+  &__paragraph {
+    &:nth-of-type(1n):not(:last-of-type) {
+      margin-bottom: 13px;
+    }
+  }
+}
