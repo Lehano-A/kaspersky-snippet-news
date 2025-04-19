@@ -1,0 +1,7 @@
+@use '../palette/palette.module' as palette;
+
+.keyword {
+  padding: 2px;
+  background-color: palette.$accent-main;
+  border-radius: 5px;
+}
