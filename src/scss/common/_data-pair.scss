@@ -1,0 +1,24 @@
+@use '../palette/palette.module' as palette;
+
+.data-pair {
+  // display: inline;
+  display: flex;
+  gap: 5px;
+  margin: 0;
+
+  &__term {
+    display: inline;
+
+    &--colon {
+      &::after {
+        content: ':';
+      }
+    }
+  }
+
+  &__definition {
+    display: inline;
+    margin-left: 0;
+    // margin-right: 5px;
+  }
+}
