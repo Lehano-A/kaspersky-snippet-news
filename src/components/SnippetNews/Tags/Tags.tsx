@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import palette from '../../../scss/palette/_palette.module.scss'
-import ButtonShowAll from '../../ButtonShowAll/ButtonShowAll'
+import ButtonShowAll from '../ButtonShowAll/ButtonShowAll'
 import extractElement from '../../../utils/extractElement'
 import { IData_TagItem } from '../../../assets/data/dataNews.types'
 import { Tag } from 'antd'
