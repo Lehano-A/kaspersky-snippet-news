@@ -1,0 +1,32 @@
+$primary-main-text: #fff;
+$secondary-main-text: #a9bcca;
+$tertiary-main-text: #171717;
+
+$accent-main: #008bff;
+
+$positive: #23ffb0;
+$negative: tomato;
+
+$border-primary: #9e9e9e;
+$border-primary-alpha-30: rgba($border-primary, 0.3);
+$border-secondary: #9bacba;
+$border-secondary-alpha-30: rgba($border-secondary, 0.3);
+$border-accent: $accent-main;
+
+$bg-primary: #282a50;
+$bg-secondary: #171717;
+
+$main-bg-gradient: radial-gradient(at left top, $bg-primary, $bg-secondary);
+
+$underline-link: rgba($border-accent, 0.3);
+
+:export {
+  borderPrimary: $border-primary;
+  borderPrimaryAlpha30: $border-primary-alpha-30;
+  underlineLink: $underline-link;
+  accentMain: $accent-main;
+  borderSecondary: $border-secondary;
+  borderSecondaryAlpha30: $border-secondary-alpha-30;
+  primaryMainText: $primary-main-text;
+  secondaryMainText: $secondary-main-text;
+}
