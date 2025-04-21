@@ -1,0 +1,24 @@
+@use '../palette/palette.module' as palette;
+@use '../core/global.module' as global;
+
+.duplicates {
+  &__counter-with-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__mini-news {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__mini-news-snippet {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid palette.$accent-main;
+    border-radius: global.$base-box-border-radius;
+  }
+}
