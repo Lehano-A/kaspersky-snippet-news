@@ -1,0 +1,11 @@
+@use '../palette/palette.module' as palette;
+@use '../core/global.module' as global;
+
+.news-box {
+  max-width: 847px;
+  width: 100%;
+  border: 1px solid;
+  border-color: rgba(palette.$border-primary, 0.3);
+  border-radius: global.$base-box-border-radius;
+  padding: 12px 15px;
+}
