@@ -1,0 +1,12 @@
+@use '../palette/palette.module' as palette;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  background: palette.$main-bg-gradient;
+}
