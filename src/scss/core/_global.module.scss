@@ -1,0 +1,56 @@
+@use '../palette/palette.module' as palette;
+$base-font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+
+$base-line-height: 1.5714285714285714;
+$title-line-height: 1.2105263157894737;
+
+$base-box-border-radius: 8px;
+
+:root {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: $base-font-family;
+  font-weight: 200;
+  font-size: 1.4rem;
+  color: palette.$secondary-main-text;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: $title-line-height;
+}
+
+a,
+p,
+span,
+dt,
+dd {
+  text-decoration: none;
+  line-height: $base-line-height;
+}
+
+p {
+  margin: 0;
+}
+
+:export {
+  baseFontFamily: $base-font-family;
+  baseBoxBorderRadius: $base-box-border-radius;
+}
