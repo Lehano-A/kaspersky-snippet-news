@@ -1,0 +1,11 @@
+@use '../palette/palette.module' as palette;
+
+.text {
+  &--primary {
+    color: palette.$primary-main-text;
+  }
+
+  &--secondary {
+    color: palette.$secondary-main-text;
+  }
+}

@@ -1,0 +1,15 @@
+@use '../palette/palette.module' as palette;
+
+.icon {
+  &--primary {
+    color: palette.$border-secondary;
+  }
+
+  &--size-17 {
+    font-size: 17px;
+  }
+
+  &--size-12 {
+    font-size: 12px;
+  }
+}

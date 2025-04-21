@@ -1,0 +1,8 @@
+@use '../palette/palette.module' as palette;
+
+.title {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: palette.$accent-main;
+  margin-bottom: 5px;
+}
