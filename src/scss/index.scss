@@ -1,8 +1,9 @@
 @use 'normalize-scss/sass/normalize';
 
-@forward '../assets/vendor/fonts/fonts';
-@forward 'core/global';
-@forward 'palette/palette';
-@forward 'components/components';
+@import '../assets/vendor/fonts/fonts';
+@import 'palette/palette.module';
+@import 'core/global.module';
+@import 'components/all';
+@import 'common/all';
 
 @include normalize.normalize();
