@@ -5,7 +5,6 @@ import sassDts from 'vite-plugin-sass-dts'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/kaspersky-snippet-news/",
   plugins: [
     sassDts(),
     react(),
