@@ -38,6 +38,8 @@ function ButtonSort({ sortedBy, setSortedBy }: ButtonSortProps) {
         defaultSelectedKeys: ['0'],
         onSelect: handleSelectSort
       }}
+      trigger={['click']}
+      transitionName=""
       aria-label="Сортировать дублированные новости"
     >
       <Typography.Link style={{ color: palette.secondaryMainText }}>
