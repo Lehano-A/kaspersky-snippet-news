@@ -14,11 +14,4 @@
     flex-direction: column;
     gap: 15px;
   }
-
-  &__mini-news-snippet {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid palette.$accent-main;
-    border-radius: global.$base-box-border-radius;
-  }
 }

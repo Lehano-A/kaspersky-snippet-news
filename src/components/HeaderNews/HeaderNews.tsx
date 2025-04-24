@@ -9,9 +9,17 @@ export interface HeaderNewsProps {
   miniMode?: boolean
   duplicateNews?: DataDuplicateNews
   dataNews: IData_SnippetNews
+  checkboxId?: string
+  setCheckNews: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-function HeaderNews({ miniMode, dataNews, duplicateNews }: HeaderNewsProps) {
+function HeaderNews({
+  miniMode,
+  dataNews,
+  duplicateNews,
+  checkboxId,
+  setCheckNews
+}: HeaderNewsProps) {
   const { AU, TI, DP, DOM, FAV, SENT, LANG, REACH, CNTR, CNTR_CODE, TRAFFIC } = dataNews
 
   return (
@@ -27,6 +35,9 @@ function HeaderNews({ miniMode, dataNews, duplicateNews }: HeaderNewsProps) {
         <HeaderToolbar
           miniMode={miniMode}
           SENT={SENT}
+          checkboxId={checkboxId}
+          // handleToggleCardNews={handleToggleCardNews}
+          setCheckNews={setCheckNews}
         />
       </div>
 

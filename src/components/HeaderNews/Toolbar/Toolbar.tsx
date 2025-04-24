@@ -1,5 +1,5 @@
 import React, { lazy, useMemo } from 'react'
-import Checkbox from 'antd/es/checkbox/Checkbox'
+import Checkbox, { CheckboxChangeEvent } from 'antd/es/checkbox/Checkbox'
 import withChangedAntdStyle from '../../../HOC/withChangedAntdStyle'
 import { Button } from 'antd'
 import { borderSecondary, secondaryMainText } from '../../../scss/palette/_palette.module.scss'
@@ -13,6 +13,8 @@ const Popover = lazy(() => import('antd/es/popover'))
 interface ToolbarProps {
   miniMode?: HeaderNewsProps['miniMode']
   SENT: IData_SnippetNews['SENT']
+  checkboxId: HeaderNewsProps['checkboxId']
+  setCheckNews: HeaderNewsProps['setCheckNews']
 }
 
 const styleButton = {
@@ -29,8 +31,26 @@ const styleButton = {
   }
 }
 
-const Toolbar = React.memo(({ miniMode, SENT }: ToolbarProps) => {
+const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setCheckNews }: ToolbarProps) => {
   const StyledButtonInfo = useMemo(() => withChangedAntdStyle(Button, styleButton), [])
+
+  // обработать тоггл мини-новости
+  function handleToggle(e: CheckboxChangeEvent) {
+    const id = e.target.id
+    const isChecked = e.target.checked
+
+    if (id) {
+      if (isChecked) {
+        setCheckNews((prevState) => [...prevState, id])
+      }
+
+      if (!isChecked) {
+        setCheckNews((prevState) => {
+          return prevState.filter((item) => item !== id)
+        })
+      }
+    }
+  }
 
   return (
     <div className="header-news__toolbar">
@@ -47,7 +67,11 @@ const Toolbar = React.memo(({ miniMode, SENT }: ToolbarProps) => {
         </StyledButtonInfo>
       </Popover>
 
-      <Checkbox className="header-news__select" />
+      <Checkbox
+        id={checkboxId}
+        className="header-news__select"
+        onChange={handleToggle}
+      />
     </div>
   )
 })

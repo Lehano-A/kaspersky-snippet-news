@@ -3,12 +3,12 @@ $secondary-main-text: #a9bcca;
 $tertiary-main-text: #171717;
 
 $accent-main: #008bff;
-
+$accent-main-alfa-30: rgba($accent-main, 0.3);
 $positive: #23ffb0;
 $negative: tomato;
 
 $border-primary: #9e9e9e;
-$border-primary-alpha-30: rgba($border-primary, 0.3);
+$border-primary-alpha-30: rgba($border-primary, 0.2);
 $border-secondary: #9bacba;
 $border-secondary-alpha-30: rgba($border-secondary, 0.3);
 $border-accent: $accent-main;

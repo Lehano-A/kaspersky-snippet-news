@@ -1,5 +1,6 @@
 [
   {
+    "ID": 473212369,
     "DP": "2025-03-11T21:00:00",
     "FAV": "/favicons/ria.png",
     "DOM": "ria.ru",
@@ -8,6 +9,7 @@
     "CNTR": ""
   },
   {
+    "ID": 147053567,
     "DP": "2025-03-09T21:00:00",
     "FAV": "/favicons/wp.png",
     "DOM": "washingtonpost.com",
@@ -16,6 +18,7 @@
     "CNTR": ""
   },
   {
+    "ID": 9785124555,
     "DP": "2025-03-15T21:00:00",
     "FAV": "/favicons/nyt.png",
     "DOM": "nytimes.com",
@@ -24,6 +27,7 @@
     "CNTR": ""
   },
   {
+    "ID": 114974475,
     "DP": "2025-03-07T21:00:00",
     "FAV": "/favicons/forb.png",
     "DOM": "forbes.com",
