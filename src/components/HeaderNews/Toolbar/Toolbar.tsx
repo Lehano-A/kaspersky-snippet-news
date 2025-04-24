@@ -34,6 +34,11 @@ const styleButton = {
 
 const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setterMarkedNews }: ToolbarProps) => {
   const StyledButtonInfo = useMemo(() => withChangedAntdStyle(Button, styleButton), [])
+  const classBgSentiment = useMemo(
+    () =>
+      SENT === 'positive' ? 'header-news__sentiment--positive' : 'header-news__sentiment--negative',
+    []
+  )
 
   // обработать тоггл мини-новости
   function handleToggle(e: CheckboxChangeEvent) {
@@ -55,9 +60,7 @@ const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setterMarkedNews }: To
 
   return (
     <div className="header-news__toolbar">
-      {!miniMode && (
-        <span className="header-news__sentiment header-news__sentiment--negative">{SENT}</span>
-      )}
+      {!miniMode && <span className={`header-news__sentiment ${classBgSentiment}`}>{SENT}</span>}
 
       <Popover
         color={borderSecondary}
