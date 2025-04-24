@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Kaspersky - Snippet News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+URL: https://snippet-news.lehano.ru/
 
-Currently, two official plugins are available:
+## Основные используемые технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- SCSS
+- TypeScript
+- Ant Design
 
-## Expanding the ESLint configuration
+## Описание
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Приложение содержит компонент сниппета новости, который разделён на два других логических компонента:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. SnippetNews: мета-данные, текст с ключевыми словами, теги и функциональные элементы.
+2. Duplicates: мета-данные, список карточек дубликатов основной новости и кнопку сортировки этого списка.
+
+## Особенности
+
+1. Ant Design по большей части использовал, когда возникала необходимость в сложных элементах. Простые элементы типа обёрток - не использовал, т.к. этот подход ухудшал производительность.
+2. Для создания списка дубликатов, в json-файле не оказалось данных, поэтому был создан кастомный список dataDuplicateNews.json
+3. Провёл работу над оптимизацией производительности: пользовался инструментами React.lazy, React.memo, useMemo
+4. В качестве способа обмена данными и функциональностью между компонентами, изначально выбрал обычную передачу пропсов, поскольку приложение на изображении-прототипе из ТЗ не выглядело сложным. На текущий момент написания, ещё всё хорошо читается, но при усложнении приложения, необходимо выбрать другой способ, например Redux.
+
+## Функционал
+
+SnippetNews:
+
+- Кнопка "Show More" - отображает весь текст, в котором есть ключевые слова.
+- Кнопка "Show All" - отображает весь список тегов.
+- Кнопка "Original Source" - открывает новую страницу источника новости.
+- Элемент [i] - при наведении, в попапе отображает какую-то дополнительную информацию.
+- Чекбокс - выделяет весь блок текущей новости.
+
+Duplicates:
+
+- Кнопка сортировки - даёт возможность отсортировать список мини-сниппетов по релевантности (в том порядке, в каком приходит с бэкенда) или по дате.
+- Элемент [i] - при наведении, в попапе отображает какую-то дополнительную информацию.
+- Чекбокс - выделяет текущий мини-сниппет.
+
+## Установка и начало работы
+
+```
+git clone https://github.com/Lehano-A/kaspersky-snippet-news.git   <-- клонируем проект
+cd [folder project]    <-- переходим внутрь папки проекта
+npm install    <-- устанавливаем зависимости
+npm start    <-- запускаем проект
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Контакты
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Telegram - @lehano
