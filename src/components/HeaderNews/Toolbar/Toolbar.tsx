@@ -7,6 +7,7 @@ import { borderPrimary } from '../../../scss/palette/_palette.module.scss'
 import { HeaderNewsProps } from '../HeaderNews'
 import { InfoOutlined } from '@ant-design/icons'
 import { IData_SnippetNews } from '../../../assets/data/dataNews.types'
+import { SnippetNewsProps } from '@/components/SnippetNews/SnippetNews'
 
 const Popover = lazy(() => import('antd/es/popover'))
 
@@ -14,7 +15,7 @@ interface ToolbarProps {
   miniMode?: HeaderNewsProps['miniMode']
   SENT: IData_SnippetNews['SENT']
   checkboxId: HeaderNewsProps['checkboxId']
-  setCheckNews: HeaderNewsProps['setCheckNews']
+  setterMarkedNews: SnippetNewsProps['setterMarkedNews']
 }
 
 const styleButton = {
@@ -31,7 +32,7 @@ const styleButton = {
   }
 }
 
-const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setCheckNews }: ToolbarProps) => {
+const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setterMarkedNews }: ToolbarProps) => {
   const StyledButtonInfo = useMemo(() => withChangedAntdStyle(Button, styleButton), [])
 
   // обработать тоггл мини-новости
@@ -41,11 +42,11 @@ const Toolbar = React.memo(({ miniMode, SENT, checkboxId, setCheckNews }: Toolba
 
     if (id) {
       if (isChecked) {
-        setCheckNews((prevState) => [...prevState, id])
+        setterMarkedNews((prevState) => [...prevState, id])
       }
 
       if (!isChecked) {
-        setCheckNews((prevState) => {
+        setterMarkedNews((prevState) => {
           return prevState.filter((item) => item !== id)
         })
       }

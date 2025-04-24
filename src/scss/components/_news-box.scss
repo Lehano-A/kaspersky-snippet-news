@@ -8,4 +8,8 @@
   border-color: rgba(palette.$border-primary, 0.3);
   border-radius: global.$base-box-border-radius;
   padding: 12px 15px;
+
+  &--marked {
+    background-color: palette.$border-secondary-alpha-30;
+  }
 }

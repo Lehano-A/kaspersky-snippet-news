@@ -6,11 +6,13 @@ import Tags from './Tags/Tags'
 import ButtonOriginalSource from './ButtonOriginalSource/ButtonOriginalSource'
 import HeaderNews from '../HeaderNews/HeaderNews'
 
-export interface NewsCardProps {
+export interface SnippetNewsProps {
   dataNews: IData_SnippetNews
+  checkboxId: string
+  setterMarkedNews: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-function SnippetNews({ dataNews }: NewsCardProps) {
+function SnippetNews({ dataNews, checkboxId, setterMarkedNews }: SnippetNewsProps) {
   const { KW, URL, HIGHLIGHTS } = dataNews
 
   const [needShowMore, setNeedShowMore] = useState(false)
@@ -21,7 +23,11 @@ function SnippetNews({ dataNews }: NewsCardProps) {
 
   return (
     <article>
-      <HeaderNews dataNews={dataNews} />
+      <HeaderNews
+        dataNews={dataNews}
+        checkboxId={checkboxId}
+        setterMarkedNews={setterMarkedNews}
+      />
 
       <FragmentNews
         needShowMore={needShowMore}

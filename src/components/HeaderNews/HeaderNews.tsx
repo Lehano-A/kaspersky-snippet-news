@@ -4,13 +4,14 @@ import SourceDetails from './SourceDetails/SourceDetails'
 import Title from '../common/Title/Title'
 import { IData_SnippetNews } from '../../assets/data/dataNews.types'
 import { DataDuplicateNews } from '../../assets/data/dataDuplicateNews.types'
+import { SnippetNewsProps } from '../SnippetNews/SnippetNews'
 
 export interface HeaderNewsProps {
   miniMode?: boolean
   duplicateNews?: DataDuplicateNews
   dataNews: IData_SnippetNews
-  checkboxId?: string
-  setCheckNews: React.Dispatch<React.SetStateAction<string[]>>
+  checkboxId: string
+  setterMarkedNews: SnippetNewsProps['setterMarkedNews']
 }
 
 function HeaderNews({
@@ -18,7 +19,7 @@ function HeaderNews({
   dataNews,
   duplicateNews,
   checkboxId,
-  setCheckNews
+  setterMarkedNews
 }: HeaderNewsProps) {
   const { AU, TI, DP, DOM, FAV, SENT, LANG, REACH, CNTR, CNTR_CODE, TRAFFIC } = dataNews
 
@@ -36,8 +37,7 @@ function HeaderNews({
           miniMode={miniMode}
           SENT={SENT}
           checkboxId={checkboxId}
-          // handleToggleCardNews={handleToggleCardNews}
-          setCheckNews={setCheckNews}
+          setterMarkedNews={setterMarkedNews}
         />
       </div>
 

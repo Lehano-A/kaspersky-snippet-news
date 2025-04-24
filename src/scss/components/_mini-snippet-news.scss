@@ -1,13 +1,13 @@
 @use '../palette/palette.module' as palette;
 @use '../core/global.module' as global;
 
-.mini-news-snippet {
+.mini-snippet-news {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid palette.$accent-main;
   border-radius: global.$base-box-border-radius;
 
-  &--checked {
+  &--marked {
     background-color: palette.$accent-main-alfa-30;
   }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import dataDuplicateNews from '../../assets/data/dataDuplicateNews.json'
-import MiniNewsSnippet from './MiniNewsSnippet/MiniNewsSnippet'
+import MiniNewsSnippet from './MiniSnippetNews/MiniSnippetNews'
 import DataPair from '../common/DataPair/DataPair'
 import ButtonSort from './ButtonSort/ButtonSort'
 import extractElement from '../../utils/extractElement'
