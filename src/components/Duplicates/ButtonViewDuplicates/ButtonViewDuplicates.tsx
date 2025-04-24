@@ -7,19 +7,19 @@ import { DownOutlined } from '@ant-design/icons'
 interface ButtonViewDuplicatesProps {
   handleClick: () => void
 }
+
+const styleButton = {
+  Button: {
+    defaultGhostBorderColor: palette.borderPrimary,
+    fontWeight: 200,
+    fontSize: '1.6rem',
+    letterSpacing: 3
+  }
+}
+
 function ButtonViewDuplicates({ handleClick }: ButtonViewDuplicatesProps) {
-  const StyledButtonViewDuplicates = useMemo(
-    () =>
-      withChangedAntdStyle(Button, {
-        Button: {
-          defaultGhostBorderColor: palette.borderPrimary,
-          fontWeight: 200,
-          fontSize: '1.6rem',
-          letterSpacing: 3
-        }
-      }),
-    []
-  )
+  const StyledButtonViewDuplicates = useMemo(() => withChangedAntdStyle(Button, styleButton), [])
+
   return (
     <StyledButtonViewDuplicates
       icon={<DownOutlined />}
