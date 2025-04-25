@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { IData_TagItem } from '../../../assets/data/dataNews.types'
+import { Tag } from 'antd'
 import palette from '../../../scss/palette/_palette.module.scss'
 import ButtonShowAll from '../ButtonShowAll/ButtonShowAll'
 import extractElement from '../../../utils/extractElement'
-import { IData_TagItem } from '../../../assets/data/dataNews.types'
-import { Tag } from 'antd'
 
 interface TagsProps {
   tags: IData_TagItem[]
@@ -20,8 +20,12 @@ const tagStyle = {
 
 function Tags({ tags }: TagsProps) {
   const [limitVisible, setLimitVisible] = useState(2)
+  const [extractedTags, setExtractedTags] = useState<IData_TagItem[]>([])
 
-  const extractedTags = extractElement(tags, 0, limitVisible)
+  useEffect(() => {
+    const extracted = extractElement(tags, 0, limitVisible)
+    setExtractedTags(extracted)
+  }, [limitVisible])
 
   // обработать клик по кнопке "Показать все"
   function handleClickShowAll() {
