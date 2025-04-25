@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { IData_SnippetNews } from '../../assets/data/dataNews.types'
-import FragmentNews from './FragmentNews/FragmentNews'
+import FragmentText from './FragmentText/FragmentText'
 import ButtonShowMore from './ButtonShowMore/ButtonShowMore'
 import Tags from './Tags/Tags'
 import ButtonOriginalSource from './ButtonOriginalSource/ButtonOriginalSource'
@@ -29,7 +29,7 @@ function SnippetNews({ dataNews, checkboxId, setterMarkedNews }: SnippetNewsProp
         setterMarkedNews={setterMarkedNews}
       />
 
-      <FragmentNews
+      <FragmentText
         needShowMore={needShowMore}
         textWithKeywords={HIGHLIGHTS}
       />
