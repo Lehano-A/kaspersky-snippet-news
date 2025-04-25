@@ -1,40 +1,25 @@
-import HeaderNews from '../../HeaderNews/HeaderNews'
+import { useState } from 'react'
 import { IData_SnippetNews } from '../../../assets/data/dataNews.types'
 import { DataDuplicateNews } from '../../../assets/data/dataDuplicateNews.types'
-import { useMemo, useState } from 'react'
-import checkMarkedNews from '../../../utils/checkMarkedNews'
+import ItemMiniSnippet from './ItemMiniSnippet/ItemMiniSnippet'
 
 interface MiniNewsSnippetProps {
   duplicates: DataDuplicateNews[]
   dataNews: IData_SnippetNews
 }
 
-function MiniNewsSnippet({ dataNews, duplicates }: MiniNewsSnippetProps) {
+function MiniNewsSnippet({ duplicates, ...rest }: MiniNewsSnippetProps) {
   const [idsMarkedMiniNews, setIdsMarkedMiniNews] = useState<string[]>([])
 
-  const getClassMarkedNews = useMemo(
-    () => (oneNews: DataDuplicateNews) =>
-      checkMarkedNews(idsMarkedMiniNews, oneNews) ? 'mini-snippet-news--marked' : '',
-    [idsMarkedMiniNews]
-  )
-
   return duplicates.map((item) => {
-    const cardId = String(item['ID'])
-
     return (
-      <article
+      <ItemMiniSnippet
         key={item['ID']}
-        id={cardId}
-        className={`mini-snippet-news ${getClassMarkedNews(item)}`}
-      >
-        <HeaderNews
-          miniMode
-          dataNews={dataNews}
-          duplicateNews={item}
-          setterMarkedNews={setIdsMarkedMiniNews}
-          checkboxId={cardId}
-        />
-      </article>
+        item={item}
+        idsMarkedMiniNews={idsMarkedMiniNews}
+        setterMarkedNews={setIdsMarkedMiniNews}
+        {...rest}
+      />
     )
   })
 }
