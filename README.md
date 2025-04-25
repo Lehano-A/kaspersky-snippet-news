@@ -48,7 +48,7 @@ URL: https://snippet-news.lehano.ru/
 git clone https://github.com/Lehano-A/kaspersky-snippet-news.git   <-- клонируем проект
 cd [folder project]    <-- переходим внутрь папки проекта
 npm install    <-- устанавливаем зависимости
-npm start    <-- запускаем проект
+npm run dev    <-- запускаем проект
 ```
 
 ## Контакты
