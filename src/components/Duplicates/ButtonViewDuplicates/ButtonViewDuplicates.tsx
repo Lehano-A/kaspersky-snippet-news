@@ -5,7 +5,7 @@ import { useMemo } from 'react'
 import { DownOutlined } from '@ant-design/icons'
 
 interface ButtonViewDuplicatesProps {
-  handleClick: () => void
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const styleButton = {
