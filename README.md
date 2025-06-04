@@ -1,6 +1,6 @@
 # Kaspersky - Snippet News
 
-URL: snippet-news.lehano.ru
+URL: https://snippet-news.lehano.ru
 
 ## Основные используемые технологии
 
